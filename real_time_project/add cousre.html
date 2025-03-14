@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Management System - Course</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            background-color: lightslategray;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            text-transform: uppercase;
+            height: 50px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .content-container {
+            flex: 1;
+            display: flex;
+        }
+
+        .sidebar {
+            flex: 20%;
+            background-color: rgb(55, 60, 66);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 25px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .content {
+            flex: 80%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .option-box {
+            flex: 0 0 calc(50% - 20px);
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #000;
+        }
+
+        .option-box:last-child {
+            margin-right: 0;
+        }
+
+        .option-box a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .option-box:hover {
+            background-color: #f0f0f0;
+        }
+
+        .content img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #000;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form-container input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: lightslategray;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #3498db;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Hostel Management System - Course</h1>
+    </div>
+
+    <div class="content-container">
+        <div class="sidebar">
+            <ul><br><br>
+                <li><a href="admin page.html">Dashboard</a></li>
+                <li>
+                    <a href="add cousre.html">Courses</a>
+                   
+                </li>
+                <li><a href="add room.html">Rooms</a></li>
+                <li><a href="admin_bk.html">Student Registration</a></li>
+                <li><a href="manage student.html">Student Management</a></li>
+                <li><a href="access.html">User Access Logs</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h2>Add Course</h2>
+            <div class="form-container">
+                <form action="txt.html">
+                    <label for="courseName">Course Name:</label>
+                    <input type="text" id="courseName" name="courseName">
+
+                    <label for="courseNameShort">Course Name (Short):</label>
+                    <input type="text" id="courseNameShort" name="courseNameShort">
+
+                    <label for="courseCode">Course Code:</label>
+                    <input type="text" id="courseCode" name="courseCode">
+
+                    <input type="submit" value="Add Course">
+                    <h2>Manage Course</h2>
+                    <img src="ma.png"
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

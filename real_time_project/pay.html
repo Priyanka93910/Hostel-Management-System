@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <style>
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Form styles */
+        form {
+            width: 60%; /* Set form width to 60% */
+            max-width: 400px; /* Limit max width for larger screens */
+            padding: 20px; /* Add padding */
+            border: 1px solid #ccc; /* Add border */
+            border-radius: 10px; /* Add border radius */
+            background-color: #fff; /* White background */
+            font-size: 18px; /* Increase font size */
+        }
+
+        /* Heading styles */
+        h2 {
+            margin-top: 40px; /* Move heading downwards */
+            text-align: center; /* Center align heading */
+        }
+
+        /* Input styles */
+        input[type="text"], input[type="tel"] {
+            width: 100%; /* Set input width to 100% */
+            padding: 10px; /* Add padding */
+            margin-bottom: 20px; /* Add margin bottom */
+            border: 1px solid #ccc; /* Add border */
+            border-radius: 5px; /* Add border radius */
+            box-sizing: border-box; /* Include padding and border in width */
+        }
+
+        /* Checkbox styles */
+        label {
+            display: block; /* Display labels as blocks */
+            margin-bottom: 10px; /* Add margin bottom to labels */
+        }
+
+        /* Button styles */
+        .button-container {
+            text-align: center; /* Center align buttons */
+            margin-top: 20px; /* Add margin top to buttons */
+        }
+
+        button {
+            padding: 10px 20px; /* Add padding */
+            margin-right: 10px; /* Add margin right */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Add border radius */
+            cursor: pointer; /* Change cursor to pointer */
+            background-color: #3498db; /* Blue background color */
+            color: #fff; /* White text color */
+            font-size: 18px; /* Increase font size */
+        }
+
+        button:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <h2>Payment Form</h2>
+        
+        <!-- Payment options -->
+        <label>
+            <input type="checkbox" name="payment-option" value="card"> Credit/Debit Card
+        </label>
+        <label>
+            <input type="checkbox" name="payment-option" value="phone-pay"> PhonePe
+        </label>
+
+        <!-- Card payment details -->
+        <div id="card-payment" style="display: none;">
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" name="card-number" placeholder="Enter card number">
+
+            <label for="expiry-date">Expiry Date:</label>
+            <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YYYY">
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" placeholder="Enter CVV">
+        </div>
+
+        <!-- PhonePe payment details -->
+        <div id="phone-pay" style="display: none;">
+            <label for="phone-number">Phone Number:</label>
+            <input type="tel" id="phone-number" name="phone-number" placeholder="Enter phone number">
+        </div>
+
+        <!-- Button container -->
+        <div class="button-container">
+            <button type="submit">Pay</button>
+            <button type="button" onclick="cancelPayment()">Cancel</button>
+        </div>
+    </form>
+
+    <script>
+        // Function to handle payment cancellation
+        function cancelPayment() {
+            alert("Payment cancelled.");
+        }
+
+        // Function to show/hide payment details based on selected payment method
+        var paymentOptions = document.querySelectorAll('input[name="payment-option"]');
+        paymentOptions.forEach(function(option) {
+            option.addEventListener('change', function() {
+                var selectedOption = this.value;
+
+                // Hide all payment details
+                document.getElementById("card-payment").style.display = "none";
+                document.getElementById("phone-pay").style.display = "none";
+
+                // Show payment details based on selected method
+                if (selectedOption === "card") {
+                    document.getElementById("card-payment").style.display = "block";
+                } else if (selectedOption === "phone-pay") {
+                    document.getElementById("phone-pay").style.display = "block";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

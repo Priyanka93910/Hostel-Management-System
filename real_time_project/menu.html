@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hostel Menu</title>
+    <style>
+        /* Styles for the colored labels */
+        .menu-label {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .menu-label.breakfast {
+            background-color: #27ae60; /* Green */
+            color: #fff;
+        }
+
+        .menu-label.lunch {
+            background-color: #f39c12; /* Orange */
+            color: #fff;
+        }
+
+        .menu-label.dinner {
+            background-color: #2980b9; /* Blue */
+            color: #fff;
+        }
+
+        .menu-label.weekend {
+            background-color: #c0392b; /* Red */
+            color: #fff;
+        }
+
+        /* Styles for the header and body */
+        body {
+            background-color: #ecf0f1; /* Light gray */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #2c3e50; /* Dark blue */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .menu-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .menu-section {
+            width: 48%; /* Adjusted width for each section */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Styles for dividing main content */
+        .content-divider {
+            border-top: 2px solid #34495e; /* Darker blue */
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hostel Menu</h1>
+        <h3>Check out today's menu and special weekend dishes</h3>
+    </header>
+
+    <div class="menu-container">
+        <section id="today-menu" class="menu-section">
+            <h2>Today's Menu:</h2>
+            <h3>Daily Tiffins:</h3>
+            <ul>
+                <li><span class="menu-label breakfast">Breakfast:</span> Idli, Vada, Sambar, Chutney</li>
+                <li><span class="menu-label breakfast">Morning Snacks:</span> Banana, Apple</li>
+            </ul>
+
+            <h3>Lunch:</h3>
+            <ul>
+                <li><span class="menu-label lunch">Vegetarian:</span> Roti, Dal, Rice, Vegetable Curry</li>
+                <li><span class="menu-label lunch">Non-Vegetarian:</span> Chicken Biryani, Raita, Salad</li>
+            </ul>
+
+            <h3>Dinner:</h3>
+            <ul>
+                <li><span class="menu-label dinner">Vegetarian:</span> Pulao, Mix Veg Curry, Salad</li>
+                <li><span class="menu-label dinner">Non-Vegetarian:</span> Fish Fry, Rice, Rasam</li>
+            </ul>
+        </section>
+
+        <section id="weekend-specials" class="menu-section">
+            <h2>Weekend Specials:</h2>
+            <h3>Saturday Menu:</h3>
+            <ul>
+                <li><span class="menu-label weekend">Lunch:</span> Special Biryani, Raitha, Gulab Jamun</li>
+                <li><span class="menu-label weekend">Dinner:</span> Paneer Butter Masala, Naan, Ice Cream</li>
+            </ul>
+
+            <h3>Sunday Menu:</h3>
+            <ul>
+                <li><span class="menu-label weekend">Lunch:</span> Veg Pulao, Curd Rice, Payasam</li>
+                <li><span class="menu-label weekend">Dinner:</span> Veg Fried Rice, Manchurian, Fruit Salad</li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="content-divider"></div>
+</body>
+</html>

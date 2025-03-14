@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Management System</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            background-color: lightslategray;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            text-transform: uppercase;
+            height: 50px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .content-container {
+            flex: 1;
+            display: flex;
+        }
+
+        .sidebar {
+            flex: 20%;
+            background-color: rgb(55, 60, 66);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 25px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .content {
+            flex: 80%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .option-box {
+            flex: 0 0 calc(50% - 20px);
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #000;
+        }
+
+        .option-box:last-child {
+            margin-right: 0;
+        }
+
+        .option-box a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .option-box:hover {
+            background-color: #f0f0f0;
+        }
+
+        .content img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .form-container {
+            margin-bottom: 20px;
+        }
+
+        .form-heading {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        form label {
+            font-size: 16px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        form input[type="text"],
+        form input[type="date"],
+        form input[type="email"],
+        form input[type="tel"],
+        form select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        form input[type="submit"],
+        form input[type="reset"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: lightslategray;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover,
+        form input[type="reset"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Hostel Management System</h1>
+</div>
+
+<div class="content-container">
+    <div class="sidebar">
+        <ul><br><br>
+            <li><a href="admin page.html">Dashboard</a></li>
+            <li>
+                <a href="add cousre.html">Courses</a>
+               
+            </li>
+            <li><a href="add room.html">Rooms</a></li>
+            <li><a href="admin_bk.html">Student Registration</a></li>
+            <li><a href="manage student.html">Student Management</a></li>
+            <li><a href="access.html">User Access Logs</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>Book Room</h1>
+
+        <!-- Book Room Form -->
+        <div class="form-container">
+            <div class="form-heading">Fill All Info</div>
+            <form id="bookRoomForm" onsubmit="return validateForm()">
+                <label for="roomNo">Room No:</label>
+                <input type="text" id="roomNo" name="roomNo">
+
+                <label for="seater">Seater:</label>
+                <input type="text" id="seater" name="seater">
+
+                <label for="feePerMonth">Fee Per Month:</label>
+                <input type="text" id="feePerMonth" name="feePerMonth">
+
+                <label for="foodStatus">Food Status:</label>
+                <select id="foodStatus" name="foodStatus">
+                    <option value="">Select Food Status</option>
+                    <option value="without_food">Without Food</option>
+                    <option value="with_food">With Food (Rs 2000 per month)</option>
+                </select>
+
+                <label for="stayFrom">Stay From:</label>
+                <input type="date" id="stayFrom" name="stayFrom">
+
+                <label for="duration">Duration:</label>
+                <input type="text" id="duration" name="duration">
+            </form>
+        </div>
+
+        <!-- Personal Info Form -->
+        <div class="form-container">
+            <div class="form-heading">Personal Info</div>
+            <form id="personalInfoForm" onsubmit="return validateForm()">
+                <label for="course">Course:</label>
+                <input type="text" id="course" name="course">
+
+                <label for="registerNo">Register No:</label>
+                <input type="text" id="registerNo" name="registerNo">
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="contactNo">Contact No:</label>
+                <input type="tel" id="contactNo" name="contactNo">
+
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email">
+
+                <label for="emergencyContact">Emergency Contact:</label>
+                <input type="tel" id="emergencyContact" name="emergencyContact">
+
+                <label for="guardianName">Guardian Name:</label>
+                <input type="text" id="guardianName" name="guardianName">
+
+                <label for="guardianRelation">Guardian Relation:</label>
+                <input type="text" id="guardianRelation" name="guardianRelation">
+
+                <label for="guardianContact">Guardian Contact:</label>
+                <input type="tel" id="guardianContact" name="guardianContact">
+            </form>
+        </div>
+
+        <!-- Correspondence Address Form -->
+        <div class="form-container">
+            <div class="form-heading">Correspondence Address</div>
+            <form id="correspondenceAddressForm" onsubmit="return validateForm()">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address">
+
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city">
+
+                <label for="state">State:</label>
+                <select id="state" name="state">
+                    <option value="">Select State</option>
+                    <option value="state1">State 1</option>
+                    <option value="state2">State 2</option>
+                    <!-- Add more states as needed -->
+                </select>
+
+                <label for="pincode">Pincode:</label>
+                <input type="text" id="pincode" name="pincode">
+            </form>
+        </div>
+
+        <!-- Permanent Address Form -->
+        <div class="form-container">
+            <div class="form-heading">Permanent Address</div>
+            <form id="permanentAddressForm" onsubmit="return validateForm()">
+                <label for="permanentAddress">Address:</label>
+                <input type="text" id="permanentAddress" name="permanentAddress">
+
+                <label for="permanentCity">City:</label>
+                <input type="text" id="permanentCity" name="permanentCity">
+
+                <label for="permanentState">State:</label>
+                <select id="permanentState" name="permanentState">
+                    <option value="">Select State</option>
+                    <option value="state1">State 1</option>
+                    <option value="state2">State 2</option>
+                    <!-- Add more states as needed -->
+                </select>
+
+                <label for="permanentPincode">Pincode:</label>
+                <input type="text" id="permanentPincode" name="permanentPincode">
+            </form>
+        </div>
+
+        <input type="reset" value="Reset">
+        <input type="submit" value="Submit" onclick="validateFormAndNavigate()">
+    </div>
+
+    <script>
+        function validateFormAndNavigate() {
+            if (!validateForm()) {
+                alert("Please enter all necessary details.");
+                return false;
+            }
+            else {
+                // Navigate to pay.html
+                window.location.href = 'pay.html';
+            }
+        }
+
+        function validateForm() {
+            var forms = document.getElementsByTagName('form');
+            for (var i = 0; i < forms.length; i++) {
+                var inputs = forms[i].getElementsByTagName('input');
+                var selects = forms[i].getElementsByTagName('select');
+                for (var j = 0; j < inputs.length; j++) {
+                    if (inputs[j].value === '') {
+                        return false;
+                    }
+                }
+                for (var k = 0; k < selects.length; k++) {
+                    if (selects[k].value === '') {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        function navigate(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>
