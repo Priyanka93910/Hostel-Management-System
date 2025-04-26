@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SKILL-DEVLOPMENT</title>
+<style>
+    /* Define CSS styles */
+    body {
+        background-color: #90EE90; /* Set background color to purple */
+    }
+</style>
+</head>
+<body>
+<script>
+      function validation() 
+	{
+        var a=document.form.uname.value;
+        var b=document.form.ph.value;
+var c=document.form.em.value;
+var d=document.form.fe.value;
+var e=document.form.me.value;
+var f=document.form.addr.value;
+        if (a=="") 
+	{
+          window.alert("Please enter your fullname");
+          document.getElementById("na").style.backgroundColor='yellow';
+          return false; 
+        } 
+        
+   if (b==""||c==""||d==""||e==""||f=="") 
+	{
+          window.alert("Please fill complete details");
+          document.getElementById("na").style.backgroundColor='red';
+          return false; 
+        }
+}
+    </script>
+<br>
+
+<header style="color:red; font-weight:bold; font-size:50px;text-align:center">
+REGISTRATION FORM
+<br></header>
+<div id=content>
+<form onsubmit="return validation();" name="form">
+<table align="center">
+<tr><td>
+Full Name
+<input name="uname" type="text" size=10 placeholder="enter fullname"><br><br>
+
+</input>
+</td></tr>
+<tr><td>Phone Number
+<input name="ph" type="tel" placeholder="enter phone numbeer"><br><br></input></td></tr>
+<tr><td>Email
+<input name="em" type="email" size=35 placeholder="enter email"><br></input><br><br></td></tr>
+<tr> <td>Gender<br><br></td></tr>
+<tr><td>Female <input name="fe" type="checkbox" size="5">
+ Male <input  name="me" type="checkbox" size="5" style="margin-left: 10px;"><br><br></td></tr>
+<tr><td><label>Address</label>
+<input name="addr" type="text" size=50 placeholder="enter address"></input><br><br></td></tr>
+ <tr>
+              <td>
+                <button style="color:red;">Submit</button>
+              </td>
+            </tr>
+
+
+
+
+
+</table>
+
+</form>
+
+</body>
+
+<footer>
+
+
+
+
+</footer>
+
+</html> 
+

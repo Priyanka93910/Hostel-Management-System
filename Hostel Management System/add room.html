@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Management System</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            background-color: lightslategray;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            text-transform: uppercase;
+            height: 50px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .content-container {
+            flex: 1;
+            display: flex;
+        }
+
+        .sidebar {
+            flex: 20%;
+            background-color: rgb(55, 60, 66);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 25px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .content {
+            flex: 80%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .form-container {
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+
+        .form-heading {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        select,
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Hostel Management System</h1>
+    </div>
+
+    <div class="content-container">
+        <div class="sidebar">
+            <ul>
+                <li><a href="admin page.html">Dashboard</a></li>
+                <li>
+                    <a href="add cousre.html">Courses</a>
+                   
+                </li>
+                <li><a href="add room.html">Rooms</a></li>
+                <li><a href="admin_bk.html">Student Registration</a></li>
+                <li><a href="manage student.html">Student Management</a></li>
+                <li><a href="access.html">User Access Logs</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h2>Add Room</h2>
+
+            <!-- Add Room Form -->
+            <div class="form-container">
+                <div class="form-heading">Fill Room Details</div>
+                <form action="#" onsubmit="return validateAddRoom()">
+                    <label for="seater">Select Seater:</label>
+                    <select id="seater" name="seater">
+                        <option value="1">1 Seater</option>
+                        <option value="2">2 Seater</option>
+                        <option value="3">3 Seater</option>
+                        <option value="4">4 Seater</option>
+                        <option value="5">5 Seater</option>
+                    </select>
+
+                    <label for="roomNo">Room No:</label>
+                    <input type="text" id="roomNo" name="roomNo" required>
+
+                    <label for="fee">Fee (Per Student):</label>
+                    <input type="text" id="fee" name="fee" required>
+
+                    <input type="submit" value="Add Room">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateAddRoom() {
+            // Validation logic for Add Room form
+        }
+    </script>
+
+</body>
+</html>

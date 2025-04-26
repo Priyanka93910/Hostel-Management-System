@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HOSTEL MANAGEMENT SYSTEM</title>
+</head>
+<body>
+    <script>
+        function validation() {
+            var a = document.form.uname.value;
+            var b = document.form.ps.value;
+
+            if (a == "") {
+                window.alert("Please enter username");
+                document.getElementById("na").style.backgroundColor = 'red';
+                return false;
+            }
+            if (b == "") {
+                window.alert("Please enter password");
+                document.getElementById("na").style.backgroundColor = 'red';
+                return false;
+            }
+        }
+    </script>
+    <br>
+
+    <header style="text-align: center;">
+        <br>
+        <h1>Admin Login</h1>
+        <h3>Hey enter your details to login your account</h3><br>
+        <form action="admin page.html" onsubmit="return validation();" name="form">
+            <table style="margin: auto;">
+                <tr>
+                    <td>
+                        <img src="in_ad.png" height="400px" width="400px">
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    UserName<br>
+                                    <input name="uname" type="text" size=30 placeholder="enter username">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Password<br>
+                                    <input name="ps" type="password" size=30 placeholder="enter password"><br><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button type="submit" style="color: red;">Login</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </header>
+</body>
+</html>

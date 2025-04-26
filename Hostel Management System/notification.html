@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hostel Notification</title>
+    <style>
+        /* Styles for the colored labels */
+        .notice-label {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .notice-label.warning {
+            background-color: #f39c12; /* Orange */
+            color: #fff;
+        }
+
+        .notice-label.info {
+            background-color: #3498db; /* Blue */
+            color: #fff;
+        }
+
+        .notice-label.danger {
+            background-color: #e74c3c; /* Red */
+            color: #fff;
+        }
+
+        /* Styles for the header and body */
+        body {
+            background-color: #f2f2f2; /* Light gray */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2c3e50; /* Dark blue */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hostel Notification</h1>
+        <h3>Stay informed about any scarcity or updates</h3>
+    </header>
+
+    <section style="padding: 20px;">
+        <h2>Latest Notices:</h2>
+        <ul>
+            <!-- Here you can add notices dynamically from the backend -->
+            <li><span class="notice-label warning">Notice 1:</span> Water supply will be disrupted tomorrow from 9 AM to 12 PM for maintenance.</li>
+            <li><span class="notice-label info">Notice 2:</span> Electricity will be temporarily shut down on Saturday for infrastructure upgrade.</li>
+            <li><span class="notice-label danger">Notice 3:</span> Limited internet connectivity due to maintenance work in progress.</li>
+            <li><span class="notice-label warning">Notice 4:</span> Mess will be closed for dinner tonight due to unforeseen circumstances.</li>
+        </ul>
+    </section>
+</body>
+</html>

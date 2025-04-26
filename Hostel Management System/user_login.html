@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Login</title>
+</head>
+<body>
+    <header style="text-align: center;"><br><br>
+        <h1 style="color: blue; font-family: sans-serif;">User Login</h1>
+        <h3>Let Me know about you</h3>
+        <a href="#" onclick="validation()" style="display: inline-block; text-decoration: none;">
+            <img src="in_st1.png" alt="Hostel Image" style="width: 400px; height: 400px;">
+        </a>
+        <form name="form" style="display: inline-block; vertical-align: top;" method="POST">
+            <br><br><br><label for="uname" style="font-size: 24px;">User Name:</label><br>
+            <input type="text" id="uname" name="uname" placeholder="Enter username" style="font-size: 24px;"><br><br>
+            <label for="ps" style="font-size: 24px;">Password:</label><br>
+            <input type="password" id="ps" name="ps" placeholder="Enter password" style="font-size: 24px;"><br><br>
+            <a href="#" onclick="validation()" style="color: red; text-decoration: none; font-size: 24px;">Login</a>
+        </form>
+    </header>
+
+    <script>
+        // Function to validate the form inputs and trigger login
+        function validation() {
+            var a = document.form.uname.value;
+            var b = document.form.ps.value;
+
+            if (a == "" || b == "") {
+                window.alert("Please enter username and password");
+                return false;
+            } else {
+                // Redirect to the "user_page.html" page
+                window.location.href = "user_page.html";
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

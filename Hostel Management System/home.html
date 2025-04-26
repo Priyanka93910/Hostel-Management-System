@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HOSTEL MANAGEMENT SYSTEM</title>
+    <style>
+        body {
+            background-color: whitesmoke;
+            /* Blue to light blue gradient */
+        }
+
+        .image-container {
+            margin: 50px;
+            position: relative;
+            background-color: whitesmoke;
+        }
+
+        .image-container img {
+            width: 200px;
+            height: auto;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+        }
+
+        .rectangle {
+            width: 300px;
+            height: 300px;
+            border: 2px solid #ccc;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        .tick-mark {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            color: green;
+            font-size: 24px;
+            display: none;
+        }
+
+        .rectangle img {
+            width: calc(200px + 10%);
+            /* increase the width by 0.5% */
+            height: auto;
+        }
+
+        #nextBtn {
+            font-weight: bold;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: lightgreen;
+            /* Adjusted the margin for proper placement */
+        }
+
+        h1 {
+            margin-top: 20px;
+            margin-right: 10px;
+            padding: 40px;
+            background-color: blueviolet;
+            * adjusted downward by three steps */
+        }
+    </style>
+</head>
+
+<body>
+    <header style="text-align: center;">
+        <h1 style="color:white;">HOSTEL MANAGEMENT SYSTEM</h1>
+
+        <h2>Login</h2>
+        <table style="margin: auto;">
+            <tr>
+                <td class="image-container" onclick="toggleTick(this)" data-profile-type="user">
+                    <div class="rectangle">
+                        <img src="student.jpeg" alt="User" title="User Profile">
+                        <p style="font-size:larger;">User Login</p>
+                        <span class="tick-mark" id="tickMark1">&#10004;</span>
+                    </div>
+                </td>
+                <td class="image-container" onclick="toggleTick(this)" data-profile-type="admin">
+                    <div class="rectangle">
+                        <img src="admin.jpg" alt="Admin" title="Admin Profile">
+                        <p style="font-size:larger;">Admin Login</p>
+                        <span class="tick-mark" id="tickMark2">&#10004;</span>
+                    </div>
+                </td>
+                <td class="image-container" onclick="toggleTick(this)" data-profile-type="register">
+                    <div class="rectangle">
+                        <img src="register.jpg" alt="Register" title="User Register">
+                        <p style="font-size:larger;">Register</p>
+                        <span class="tick-mark" id="tickMark3">&#10004;</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: center;">
+                    <button id="nextBtn" disabled onclick="goToNextPage()">Next</button>
+                </td>
+            </tr>
+        </table>
+    </header>
+
+    <script>
+        function toggleTick(element) {
+            var tickMark = element.querySelector('.tick-mark');
+            var nextBtn = document.getElementById("nextBtn");
+
+            var allTickMarks = document.querySelectorAll('.tick-mark');
+            allTickMarks.forEach(function (tick) {
+                tick.style.display = 'none';
+            });
+
+            tickMark.style.display = 'inline';
+            nextBtn.disabled = false;
+
+            var profileType = element.getAttribute('data-profile-type');
+            sessionStorage.setItem('selectedProfile', profileType);
+        }
+
+        function goToNextPage() {
+            var selectedProfile = sessionStorage.getItem('selectedProfile');
+
+            if (selectedProfile === 'user') {
+                window.location.href = "user_login.html";
+            } else if (selectedProfile === 'admin') {
+                window.location.href = "admin_login.html";
+            } else if (selectedProfile === 'register') {
+                window.location.href = "register.html";
+            } else {
+                console.error('Invalid profile type selected');
+            }
+        }
+    </script>
+</body>
+
+</html>
